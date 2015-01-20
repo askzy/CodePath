@@ -82,13 +82,13 @@
     
     [updatedTipValues replaceObjectAtIndex:index withObject:newValue];
     if (isIncreasing) {
-        for (int i = index + 1; i < 3; i++) {
+        for (NSInteger i = index + 1; i < 3; i++) {
             if ([tipValues[i] floatValue] < stepper.value) {
                 [updatedTipValues replaceObjectAtIndex:i withObject:newValue];
             }
         }
     } else {
-        for (int i = index - 1; i >= 0; i--) {
+        for (NSInteger i = index - 1; i >= 0; i--) {
             if ([tipValues[i] floatValue] > stepper.value) {
                 [updatedTipValues replaceObjectAtIndex:i withObject:newValue];
             }
@@ -141,7 +141,7 @@
 // The number of rows of data
 - (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return _pickerData.count;
+    return (int)(_pickerData.count);
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
