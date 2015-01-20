@@ -43,6 +43,21 @@
     self.maxPercentSettingLabel.text = _pickerData[2];
     self.roundingEnabledSwitch.onTintColor = [UIColor whiteColor];
     [self loadSettings];
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Credit"
+                                                                            style:UIBarButtonItemStylePlain
+                                                                           target:self
+                                                                           action:@selector(onTappingCredit)];
+}
+
+- (void)onTappingCredit
+{
+  UIAlertView *alertView =
+  [[UIAlertView alloc] initWithTitle:@"Tip Calculator"
+                             message:@"Developed by Ankur Sadhoo while learning iOS development through Code Path"
+                            delegate:nil
+                   cancelButtonTitle:@"OK"
+                   otherButtonTitles:nil];
+  [alertView show];
 }
 
 - (IBAction)onRoundingToggle:(id)sender {
